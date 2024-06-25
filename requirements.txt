@@ -1,0 +1,4 @@
+langchain-groq
+crewai
+crewai-tools
+langchain-community
