@@ -11,6 +11,8 @@ from crewai_tools import SerperDevTool , tool
 from crewai_tools import ScrapeWebsiteTool
 from langchain_community.tools.tavily_search import TavilySearchResults
 import streamlit as st
+import sys
+
 
 llm = ChatGroq(model="mixtral-8x7b-32768",
            api_key="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")
@@ -184,7 +186,7 @@ def start(question):
     result = rag_crew.kickoff(inputs=inputs)
     return result
 
-
+st.write(sys.version)
 st.set_page_config("LawGenie")
 st.header("LawGenie")
 st.info("Your Virtual Legal Expert")
