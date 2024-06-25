@@ -1,9 +1,9 @@
 
-!pip install crewai
+#!pip install crewai
 
-!pip install langchain_groq
+#!pip install langchain_groq
 
-!pip install crewai crewai-tools
+#!pip install crewai crewai-tools
 
 from langchain_groq import ChatGroq
 from crewai import Agent , Task , Crew , Process
