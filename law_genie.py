@@ -11,7 +11,6 @@ from crewai_tools import SerperDevTool , tool
 from crewai_tools import ScrapeWebsiteTool
 from langchain_community.tools.tavily_search import TavilySearchResults
 import streamlit as st
-import sys
 __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
