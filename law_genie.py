@@ -12,7 +12,9 @@ from crewai_tools import ScrapeWebsiteTool
 from langchain_community.tools.tavily_search import TavilySearchResults
 import streamlit as st
 import sys
-
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 llm = ChatGroq(model="mixtral-8x7b-32768",
            api_key="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")
