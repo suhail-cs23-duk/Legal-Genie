@@ -187,7 +187,6 @@ def start(question):
     result = rag_crew.kickoff(inputs=inputs)
     return result
 
-st.write(sys.version)
 st.set_page_config("LawGenie")
 st.header("LawGenie")
 st.info("Your Virtual Legal Expert")
