@@ -13,7 +13,7 @@ from langchain_community.tools.tavily_search import TavilySearchResults
 import streamlit as st
 
 llm = ChatGroq(model="mixtral-8x7b-32768",
-           api_key="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")
+           api_key="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")
 
 # !pip install langchain-community
 
