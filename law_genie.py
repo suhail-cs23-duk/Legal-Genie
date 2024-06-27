@@ -169,7 +169,7 @@ answer_task = Task(
 description=("Based on the response from the hallucination task for the question {question} evaluate whether the answer is useful to resolve the question."
                  " Perform a 'websearch' and return the considered response"),
     expected_output=("Return a clear and concise response if the response from 'hallucination_task' is 'yes'."
-                     "Perform a web search using 'web_search_tool' and return a clear and concise response"),
+                     "Perform a web search using 'web_search_tool' and return a clear and detailed response"),
     context=[hallucination_task],
     agent=answer_grader,
     #tools=[answer_grader_tool],
