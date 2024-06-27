@@ -11,7 +11,6 @@ from langchain_community.llms.cloudflare_workersai import CloudflareWorkersAI
 from langchain_core.prompts import PromptTemplate
 import streamlit as st
 
-import getpass
 __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
@@ -72,7 +71,6 @@ retriever_task2 = Task(
                  "Make sure to remove formatting from the content and only provide the text content of the website."
     ),
     expected_output=("List of websites and their content in the following format: "
-                     # "[{'link': 'URL of the website', 'title': 'Title of the website', 'content': 'Content of the website without the formatting'}, {'link': 'URL of the website','title': 'Title of the website', 'content': 'Content of the website without the formatting'}]"
                      "1. 1.1. URL of the website 1.2. Title of the website 1.3. Content of the website without the formatting\n2. 2.1. URL of the website 2.2. Title of the website 2.3. Content of the website without the formatting\n"),
     agent=Retriever_Agent,
 )
@@ -80,7 +78,6 @@ retriever_task2 = Task(
 grader_task = Task(
     description="Based on the response from the 'retriever_task2' for the question '{question}' evaluate whether the retrieved content is relevant to the question.",
     expected_output=("List of websites and their content in the following format: "
-                     # "[{'link': 'URL of the website', 'title': 'Title of the website', 'content': 'Content of the website without the formatting'}, {'link': 'URL of the website','title': 'Title of the website', 'content': 'Content of the website without the formatting'}]"
                      "1. 1.1. URL of the website 1.2. Title of the website 1.3. Content of the website without the formatting \n2. 2.1. URL of the website 2.2. Title of the website 2.3. Content of the website without the formatting\n"
                      "Provide a score for each website based on its relevance to the question asked."
                      "Sort the websites based on their relevance score."
