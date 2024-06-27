@@ -1,9 +1,4 @@
-
-#!pip install crewai
-
-#!pip install langchain_groq
-
-#!pip install crewai crewai-tools
+# Live demo at https://legal-genie.streamlit.app/
 
 from langchain_groq import ChatGroq
 from crewai import Agent , Task , Crew , Process
@@ -24,9 +19,6 @@ import os
 os.environ["TAVILY_API_KEY"] = "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"
 web_search_tool = TavilySearchResults()
 
-web_search_tool = TavilySearchResults()
-
-# web_search_tool.run("she murdered me , is it a crime")
 
 @tool
 def case_router_tool(question):
