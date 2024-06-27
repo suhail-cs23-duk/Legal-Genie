@@ -12,6 +12,9 @@ from langchain_core.prompts import PromptTemplate
 import streamlit as st
 
 import getpass
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 my_account_id = "f4a1ef14a12e4357d0afc0cb6b417122"
 my_api_token = "bdM94MnhSriTu8bgPuViGJKRMWyBz-E3yuIPqCVz"
