@@ -1,3 +1,5 @@
+# Live demo at https://legal-genie-v2.streamlit.app/
+
 from crewai.tasks.task_output import TaskOutput
 from langchain_groq import ChatGroq
 from langchain_community.llms import Ollama
