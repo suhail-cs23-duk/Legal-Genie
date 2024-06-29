@@ -11,12 +11,12 @@ import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 llm = ChatGroq(model="mixtral-8x7b-32768",
-           api_key="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")
+           api_key=st.secrets["GROK_API_KEY"])
 
 # !pip install langchain-community
 
 import os
-os.environ["TAVILY_API_KEY"] = "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"
+os.environ["TAVILY_API_KEY"] = st.secrets["TAVILY_API_KEY"]
 web_search_tool = TavilySearchResults()
 
 
