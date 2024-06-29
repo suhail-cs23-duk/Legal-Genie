@@ -7,6 +7,7 @@ from crewai import Agent , Task , Crew , Process
 from crewai_tools import SerperDevTool , tool
 from crewai_tools import ScrapeWebsiteTool
 from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain.utilities.tavily_search import TavilySearchAPIWrapper
 
 from langchain.chains import LLMChain
 from langchain_community.llms.cloudflare_workersai import CloudflareWorkersAI
@@ -27,7 +28,8 @@ llm = CloudflareWorkersAI(account_id=my_account_id, api_token=my_api_token, mode
 
 import os
 os.environ["TAVILY_API_KEY"] = st.secrets["TAVILY_API_KEY"]
-web_search_tool = TavilySearchResults()
+search = TavilySearchAPIWrapper()
+web_search_tool = TavilySearchResults(api_wrapper=search)
 
 Retriever_Agent = Agent(
 role="Retriever",
