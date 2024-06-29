@@ -17,16 +17,16 @@ __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
-my_account_id = "f4a1ef14a12e4357d0afc0cb6b417122"
-my_api_token = "bdM94MnhSriTu8bgPuViGJKRMWyBz-E3yuIPqCVz"
+my_account_id = st.secrets["CLOUDFLARE_ACCOUNT_ID"]
+my_api_token = st.secrets["CLOUDFLARE_API_KEY"]
 
-# llm = ChatGroq(model="mixtral-8x7b-32768", api_key="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")
+# llm = ChatGroq(model="mixtral-8x7b-32768", api_key=st.secrets["GROK_API_KEY"])
 
 # llm = Ollama(model="llama3")
 llm = CloudflareWorkersAI(account_id=my_account_id, api_token=my_api_token, model="@cf/meta/llama-3-8b-instruct")
 
 import os
-os.environ["TAVILY_API_KEY"] = "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"
+os.environ["TAVILY_API_KEY"] = st.secrets["TAVILY_API_KEY"]
 web_search_tool = TavilySearchResults()
 
 Retriever_Agent = Agent(
