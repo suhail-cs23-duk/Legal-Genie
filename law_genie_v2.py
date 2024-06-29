@@ -21,10 +21,10 @@ sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 my_account_id = st.secrets["CLOUDFLARE_ACCOUNT_ID"]
 my_api_token = st.secrets["CLOUDFLARE_API_KEY"]
 
-# llm = ChatGroq(model="mixtral-8x7b-32768", api_key=st.secrets["GROK_API_KEY"])
+llm = ChatGroq(model="mixtral-8x7b-32768", api_key=st.secrets["GROK_API_KEY"])
 
 # llm = Ollama(model="llama3")
-llm = CloudflareWorkersAI(account_id=my_account_id, api_token=my_api_token, model="@cf/meta/llama-3-8b-instruct")
+# llm = CloudflareWorkersAI(account_id=my_account_id, api_token=my_api_token, model="@cf/meta/llama-3-8b-instruct")
 
 import os
 os.environ["TAVILY_API_KEY"] = st.secrets["TAVILY_API_KEY"]
